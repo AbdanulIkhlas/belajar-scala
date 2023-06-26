@@ -1,4 +1,4 @@
-# dicoding-dasar-web
+# DICODING DASAR WEB
 
 ### Fasilitasi BDT 2023
 

@@ -1,0 +1,48 @@
+h1,
+h3 {
+    font-size: 20px;
+    color: green;
+}
+
+.kotak {
+    background-color: aquamarine;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+.flexDirection {
+    border: 3px solid black;
+    width: 60%;
+    padding: 25px;
+    margin: 20px auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.flexDirection section {
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid salmon;
+    box-sizing: border-box;
+}
+
+.flexDirection .baris {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexDirection .baris-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.flexDirection .kolom {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexDirection .kolom-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}

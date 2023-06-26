@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #00a2c6;
+}
+
+h3 {
+    color: #00a2c6;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 20px;
+    color: white;
+    background-color: #00a2c6;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+nav a {
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul {
+    padding-inline: 4rem;
+    display: flex;
+    gap: 2rem;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+nav {
+    background-color: #00a2c6;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+}
+
+nav a:hover {
+    font-weight: bold;
+}
+
+.profile header {
+    text-align: center;
+}
+
+.featured-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile img {
+    width: 200px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.jumbotron {
+    padding: 60px;
+    background-color: #00c8eb;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    gap: 1.5rem;
+}
+
+#content {
+    flex: 5;
+    display: flex;
+    flex-flow: column nowrap;
+    /*? flex-direction flex-wrap*/
+    gap: 1rem 2rem;
+}
+
+aside {
+    flex: 1;
+}
+
+/* Rule yang dituliskan dalam block @media di bawah akan diterapkan pada device yang memiliki ukuran viewport di bawah 992px */
+@media screen and (max-width: 992px) {
+    /* ..... */
+}
+
+/* Rule yang dituliskan dalam block @media di bawah akan diterapkan pada device yang memiliki ukuran viewport di bawah 600px */
+@media screen and (max-width: 600px) {
+    /* ..... */
+}
+
+
+@media screen and (max-width: 1200px) {
+    main {
+        flex-flow: column nowrap;
+    }
+
+    main aside {
+        align-self: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    nav ul {
+        justify-content: center;
+    }
+
+    main aside {
+        align-self: stretch;
+    }
+}
+
+body header {
+    display: inline;
+}

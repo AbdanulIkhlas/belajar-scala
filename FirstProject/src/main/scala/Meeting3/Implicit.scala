@@ -1,5 +1,6 @@
 package Meeting3
 
+
 object Implicit extends App {
   implicit val nama : String = "Cihuyy"
   implicit val umur : Int = 9

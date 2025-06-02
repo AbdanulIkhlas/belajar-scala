@@ -1,5 +1,4 @@
 package Meeting3
-import play.api.libs.json._
 
 /*
    * {
@@ -59,7 +58,7 @@ object LatihanBuatJson extends App {
     )
   )
 
-  val json = Json.toJson(place)
+  val json = Json.toJson(place)(placeWrites)
 
   println(Json.prettyPrint(json))
   println("=========================")
@@ -68,24 +67,32 @@ object LatihanBuatJson extends App {
   println(s"Nama : ${name}")
   println(s"Semua nama : ${allNames}")
 
-  val residents = json("residents")
-//  println(s"semua residents : ${residents}")
-//  println(s"residen index 1 : ${residents(1)}")
-//  println(s"umur residen index 1 : ${(residents(1) \ "age").as[Int]}")
+//  val residents = json("residents")
+  val residents = (json \ "residents").as[JsArray]
+  println(s"semua residents : ${residents}")
+  println(s"residen index 1 : ${residents(1)}")
+  println(s"umur residen index 1 : ${(residents(1) \ "age").as[Int]}")
 
   var index = 0
+  println("----------------------------------------------------------")
   residents.as[JsArray].value.foreach { resident =>
     val name = (resident \ "name").as[String]
     val age = (resident \ "age").as[Int]
-    val role = (resident \ "role").asOpt[String].getOrElse("None") // null-safe
+    val role = (resident \ "role").asOpt[String].orNull
 
-    println(s"data residen index ${index} : Name: $name, Age: $age, Role: $role")
+    println(s"data residen index ${index} : ")
+    println(s"Nama : $name")
+    println(s"Age : $age")
+    println(s"Role : $role\n")
     index += 1
   }
+  println("----------------------------------------------------------")
 
-  val location = json("location")
-  println(s"location lat  : ${(location \ "lat").as[Double]}")
-  println(s"location long :${(location \ "long").as[Double]}")
+//  val location = json("location")("lat").as[Double]
+  val location = (json \ "location" \ "lat").as[Double]
+  println(location)
+//  println(s"location lat  : ${(location \ "lat").as[Double]}")
+//  println(s"location long :${(location \ "long").as[Double]}")
 
 
 }
